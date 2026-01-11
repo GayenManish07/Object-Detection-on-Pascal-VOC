@@ -1,15 +1,15 @@
-# Task 1: Efficient Object Detection from Scratch
+# Object Detection from Scratch
 
 This repository contains the implementation for **Task 1** of the Computer Vision assignment. The goal was to build, train, and analyze a lightweight object detector (Faster R-CNN with MobileNetV2 backbone) trained entirely from scratch on a subset of the PASCAL VOC 2012 dataset.
 
-## 📌 Project Overview
+##  Project Overview
 - **Model Architecture:** Faster R-CNN (Region-based Convolutional Neural Network).
 - **Backbone:** MobileNetV2 (chosen for efficiency over ResNet).
 - **Initialization:** Random weights (Trained from scratch, `weights=None`).
 - **Dataset:** PASCAL VOC 2012 (Subset of 5 classes: Aeroplane, Bicycle, Car, Person, Dog).
 - **Framework:** PyTorch.
 
-## 🛠️ Training Methodology
+##  Training Methodology
 To find the optimal balance between performance and efficiency, we conducted a comprehensive ablation study involving **9 different configurations**.
 
 ### 1. Model Scaling
@@ -44,11 +44,9 @@ We trained all 9 configurations for 50 epochs on a consistent data subset to com
 ### Analysis of Trade-offs
 1.  **Best Accuracy:** The **1.0x Width + Mixup** configuration achieved the highest mAP_50 (0.6095). Mixup proved highly effective for training from scratch, likely forcing the model to learn more robust features than simple flipping.
 2.  **Best Speed:** The **0.5x Width** models consistently achieved higher FPS (up to 56 FPS). However, this came at a significant cost to accuracy (~9% drop in mAP compared to the best model).
-3.  **The "Sweet Spot":** The **0.5x + Mixup** model offers an interesting compromise, achieving respectable accuracy (0.5783 mAP) while maintaining high inference speed.
+3.  **The Balanced spot:** The **0.5x + Mixup** model offers an interesting compromise, achieving respectable accuracy (0.5783 mAP) while maintaining high inference speed.
 
-## How to Reproduce
-
-### 1. Requirements
-Ensure you have the required libraries installed:
-```bash
-pip install torch torchvision opencv-python pandas torchmetrics
+## Usage
+[Download the PASCAL VOC dataset](https://datasetninja.com/pascal-voc-2012#download)
+Install the python modules as given in requirements.txt
+Run main.py after giving the appropirate path to the dataset.
