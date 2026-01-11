@@ -47,6 +47,21 @@ We trained all 9 configurations for 50 epochs on a consistent data subset to com
 3.  **The Balanced spot:** The **0.5x + Mixup** model offers an interesting compromise, achieving respectable accuracy (0.5783 mAP) while maintaining high inference speed.
 
 ## Usage
-[Download the PASCAL VOC dataset](https://datasetninja.com/pascal-voc-2012#download)
-Install the python modules as given in requirements.txt
-Run main.py after giving the appropirate path to the dataset.
+
+Follow these steps to set up the environment and run the training/inference pipeline.
+
+### 1. Dataset Setup
+First, download the dataset and extract it to your project directory.
+* **Download:** [PASCAL VOC 2012 Dataset](https://datasetninja.com/pascal-voc-2012#download)
+* *Note: Ensure the data is extracted so that the `JPEGImages` and `Annotations` folders are accessible.*
+
+### 2. Install Dependencies
+Install the required Python modules using pip:
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Example usage
+```bash
+python main.py --data_path /path/to/VOC2012_train_val
+```
